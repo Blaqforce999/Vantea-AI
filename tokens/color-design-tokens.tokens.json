@@ -1,0 +1,1707 @@
+{
+  "gradient": {
+    "vantea": {
+      "gradient": {
+        "reveal": {
+          "description": "Achievement reveal moments — gold fading into dark warmth",
+          "type": "custom-gradient",
+          "value": {
+            "gradientType": "linear",
+            "rotation": 90,
+            "stops": [
+              {
+                "position": 0,
+                "color": "#b8862bff"
+              },
+              {
+                "position": 1,
+                "color": "#14120fff"
+              }
+            ]
+          },
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:caa779481a184e372b89c18a919a211b2a79184c,",
+              "exportKey": "gradient"
+            }
+          }
+        },
+        "achievement": {
+          "description": "Milestone celebrations — warm ink transitioning to luminous parchment",
+          "type": "custom-gradient",
+          "value": {
+            "gradientType": "linear",
+            "rotation": 90,
+            "stops": [
+              {
+                "position": 0,
+                "color": "#14120fff"
+              },
+              {
+                "position": 1,
+                "color": "#faf8f5ff"
+              }
+            ]
+          },
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:11f1c87f725c33d7816836f2cb4e82a4c4fbe3ce,",
+              "exportKey": "gradient"
+            }
+          }
+        },
+        "progress": {
+          "description": "Growth states — deep teal grounding into warm ink",
+          "type": "custom-gradient",
+          "value": {
+            "gradientType": "linear",
+            "rotation": 90,
+            "stops": [
+              {
+                "position": 0,
+                "color": "#1e4d48ff"
+              },
+              {
+                "position": 1,
+                "color": "#14120fff"
+              }
+            ]
+          },
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:19ac86c656f93d7c188b7e3404e82585aef801a3,",
+              "exportKey": "gradient"
+            }
+          }
+        },
+        "dark": {
+          "description": "Large atmospheric brand surfaces — parchment dissolving into warm ink",
+          "type": "custom-gradient",
+          "value": {
+            "gradientType": "linear",
+            "rotation": 90,
+            "stops": [
+              {
+                "position": 0,
+                "color": "#faf8f5ff"
+              },
+              {
+                "position": 1,
+                "color": "#14120fff"
+              }
+            ]
+          },
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "S:2bdc33007525c785e4ac4db1b9498584e5896898,",
+              "exportKey": "gradient"
+            }
+          }
+        },
+        "goldFoil": {
+          "description": "Foil shimmer — the primary CTA fill, the Worth number peak, and the footer wordmark only. Built from the existing Antique Gold primitive scale (30/60/70), not a new color.",
+          "type": "custom-gradient",
+          "value": {
+            "gradientType": "linear",
+            "rotation": 120,
+            "stops": [
+              {
+                "position": 0,
+                "color": "#8a6420ff"
+              },
+              {
+                "position": 0.52,
+                "color": "#dab162ff"
+              },
+              {
+                "position": 1,
+                "color": "#e5c584ff"
+              }
+            ]
+          },
+          "extensions": {
+            "org.lukasoppermann.figmaDesignTokens": {
+              "styleId": "",
+              "exportKey": "gradient"
+            }
+          }
+        }
+      }
+    }
+  },
+  "color": {
+    "vantea": {
+      "color": {
+        "primitive": {
+          "warm ink": {
+            "0": {
+              "description": "",
+              "type": "color",
+              "value": "#000000ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:933cb7067af8cca375c26ce2271913b87ba15331,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "5": {
+              "description": "",
+              "type": "color",
+              "value": "{color.brand — original warm ink #14120f. logo, headings, body text, strong surfaces.}",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:d5e0547ff8a6d820ed9a257d0cd81cffbdb96774,",
+                  "exportKey": "color",
+                  "alias": "color.brand — original warm ink #14120f. logo, headings, body text, strong surfaces."
+                }
+              }
+            },
+            "10": {
+              "description": "",
+              "type": "color",
+              "value": "#1d1a15ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:0122889e13d2c5d8291225d73629c7363f3a8d61,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "20": {
+              "description": "",
+              "type": "color",
+              "value": "#332e26ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:31e55dbffef701c13fc3b2de3af08132dd4d9c83,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "30": {
+              "description": "",
+              "type": "color",
+              "value": "#4a4338ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:52b62432f37c0438420d309017d47fc09a661c2c,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "40": {
+              "description": "",
+              "type": "color",
+              "value": "#62594cff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:8ef436eccaecb86c170b52dd8dc287e8104ff6fd,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "50": {
+              "description": "",
+              "type": "color",
+              "value": "#7b7161ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:52d18243f7c6f8b5b44940ad52ed45586fbca416,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "60": {
+              "description": "",
+              "type": "color",
+              "value": "#958a7aff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:6b3da78d30ecbb027bbc0b0c818edb5c213b6fc3,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "70": {
+              "description": "",
+              "type": "color",
+              "value": "#b0a494ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:8655e89709ce889ccbf64aa3f543ee39c84c8a98,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "80": {
+              "description": "",
+              "type": "color",
+              "value": "#ccbfafff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:d5c6e015f43d9852c00c4a521c95f53b1212e532,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "90": {
+              "description": "",
+              "type": "color",
+              "value": "#e8dbcbff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:59d392f53e7d634c49ae0eeee4ae55a63b8462eb,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "95": {
+              "description": "",
+              "type": "color",
+              "value": "#f5ede0ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:1e8773ec715f1cab74deb427767803a0cd576565,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "99": {
+              "description": "",
+              "type": "color",
+              "value": "#fefaf5ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:0964bd9be40fe9ea486cce6766de587311f10eaf,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "100": {
+              "description": "",
+              "type": "color",
+              "value": "#ffffffff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:a355ac831f76475b8435d150602fa40a63702407,",
+                  "exportKey": "color"
+                }
+              }
+            }
+          },
+          "parchment": {
+            "0": {
+              "description": "",
+              "type": "color",
+              "value": "#000000ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:c27579a2a65920853a16925ae04bb7b43c65d250,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "10": {
+              "description": "",
+              "type": "color",
+              "value": "#1c1b17ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:f295238f8055e0cdd375e91dd18f8ac3dc4449ee,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "20": {
+              "description": "",
+              "type": "color",
+              "value": "#323028ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:301a269a7d46cb3e8b03fd124758698abe1f0575,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "30": {
+              "description": "",
+              "type": "color",
+              "value": "#49463dff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:eecc885861a2c186b17e3f807dd6b682e6644e9e,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "40": {
+              "description": "",
+              "type": "color",
+              "value": "#615d53ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:55aba4f6105a0e793787a359c8a108e5e6ddbbc4,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "50": {
+              "description": "",
+              "type": "color",
+              "value": "#7a756bff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:32740ba2a428b5a4325d778c819c908c4fbbc8ad,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "60": {
+              "description": "",
+              "type": "color",
+              "value": "#948f84ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:b42e302a316b3faf09c0bb9fad985975c7ecea69,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "70": {
+              "description": "",
+              "type": "color",
+              "value": "#afa99eff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:acd2ed147e58736a125d6c4a3f56741dfa891f51,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "80": {
+              "description": "",
+              "type": "color",
+              "value": "#cbc5baff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:a697948a58cde8a5c4f7c6f1c52b664bd4667815,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "87": {
+              "description": "",
+              "type": "color",
+              "value": "#ddd9cfff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:fa8111e3c0f4f89857223da1d415f01ae1dc33f2,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "90": {
+              "description": "",
+              "type": "color",
+              "value": "#e7e3d9ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:04fb71226a1dd0b839ebc0415f7fe95e53c3a208,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "92": {
+              "description": "",
+              "type": "color",
+              "value": "#edebe2ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:67e67c76d8942089fc9493a3cc31a9927ac83bba,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "94": {
+              "description": "",
+              "type": "color",
+              "value": "#f2f0e8ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:6275cec7a53ecf2f8ba74a185bb1a9480502b076,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "95": {
+              "description": "",
+              "type": "color",
+              "value": "#f4f2ebff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:4a9e8b87359901fa9aaa98cb424e5bf4a117784c,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "96": {
+              "description": "",
+              "type": "color",
+              "value": "#f6f5eeff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:eda3a823e2f387d4bd5e3dc5edbe529d9ac85745,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "98": {
+              "description": "",
+              "type": "color",
+              "value": "#f9f7f2ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:305ba58fa96b05c14ee40b888675f36c73aeedab,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "99": {
+              "description": "",
+              "type": "color",
+              "value": "{color.brand — original parchment #faf8f5. default background, warm off-white canvas.}",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:76a7f8b2235cd9b9313a2312941c910cc2998cb3,",
+                  "exportKey": "color",
+                  "alias": "color.brand — original parchment #faf8f5. default background, warm off-white canvas."
+                }
+              }
+            },
+            "100": {
+              "description": "",
+              "type": "color",
+              "value": "#ffffffff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:62a2703093ba556cc09a8249572aed03a87a9e31,",
+                  "exportKey": "color"
+                }
+              }
+            }
+          },
+          "antique gold": {
+            "0": {
+              "description": "",
+              "type": "color",
+              "value": "#000000ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:a3de4fef49559b0c091cc21733c348bfdbbfe969,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "10": {
+              "description": "",
+              "type": "color",
+              "value": "#33240aff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:7a8d1ac6e9440c46a7df5a7e3675f6bcdb0bb138,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "20": {
+              "description": "",
+              "type": "color",
+              "value": "#5e4415ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:381360fc68ad80feb1818c0a3e6a70c73bae0f14,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "30": {
+              "description": "",
+              "type": "color",
+              "value": "#8a6420ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:436ba52d27cf3020d8f321c5bbf1c85a27d03860,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "40": {
+              "description": "",
+              "type": "color",
+              "value": "{color.brand — original antique gold #b8862b. reveal, milestones, worth figure.}",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:0d2fb6aa4dc7991507a174f91fe685e24d6db107,",
+                  "exportKey": "color",
+                  "alias": "color.brand — original antique gold #b8862b. reveal, milestones, worth figure."
+                }
+              }
+            },
+            "50": {
+              "description": "",
+              "type": "color",
+              "value": "#cb9b42ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:2cc6ed0b686b29a238637a86b4d899631126cfd6,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "60": {
+              "description": "",
+              "type": "color",
+              "value": "#dab162ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:68f84b17bf548cd043234f31ad876e29f73fdcf6,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "70": {
+              "description": "",
+              "type": "color",
+              "value": "#e5c584ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:b63b7a68c3e89ca10cfc1cd87f2e15436598d34a,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "80": {
+              "description": "",
+              "type": "color",
+              "value": "#efd8a8ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:37a8588b7876d6997438ef44aa543fd0afa0f046,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "90": {
+              "description": "",
+              "type": "color",
+              "value": "#f7ebceff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:987e1eaac368dbcb1e1b1ff611a1076682aed1c5,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "95": {
+              "description": "",
+              "type": "color",
+              "value": "#fbf5e6ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:195bbb11dfb88414264d62f8f3fd988f8d6d6521,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "99": {
+              "description": "",
+              "type": "color",
+              "value": "#fffcf5ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:3c1ccbfe7f8ed757a600b8117577320ff93116ca,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "100": {
+              "description": "",
+              "type": "color",
+              "value": "#ffffffff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:14096ee780db8a40b22fc421bb729d3d82835825,",
+                  "exportKey": "color"
+                }
+              }
+            }
+          },
+          "deep teal": {
+            "0": {
+              "description": "",
+              "type": "color",
+              "value": "#000000ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:e5561fc1db801c26bcb105cec4849deb7c221a34,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "10": {
+              "description": "",
+              "type": "color",
+              "value": "#0e2826ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:d12de422427e97c6fa5c436eafb738b33942c4f2,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "20": {
+              "description": "",
+              "type": "color",
+              "value": "{color.brand — original deep teal #1e4d48. progress and growth states.}",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:bcb3b3c36b71ec581a57637d8bdd8121abb50082,",
+                  "exportKey": "color",
+                  "alias": "color.brand — original deep teal #1e4d48. progress and growth states."
+                }
+              }
+            },
+            "30": {
+              "description": "",
+              "type": "color",
+              "value": "#316b64ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:8f0b7355c238cca5850f7af18aa8af943b959b0c,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "40": {
+              "description": "",
+              "type": "color",
+              "value": "#468a82ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:59e5a5324e371cca5c31f36da1c0ff9f73cc6e98,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "50": {
+              "description": "",
+              "type": "color",
+              "value": "#5da59cff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:d12e32e9295ea176050efc4878a1844a11e0867b,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "60": {
+              "description": "",
+              "type": "color",
+              "value": "#7bbab2ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:2cb856536b558dc1dbb7bb6c9df11fd9725b2675,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "70": {
+              "description": "",
+              "type": "color",
+              "value": "#9ccec8ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:93ceb77fa9764653f5119a392b3823b920292ba0,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "80": {
+              "description": "",
+              "type": "color",
+              "value": "#bde1dcff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:6ab5b9b29994e349be8d6a355bb416d0c94a87c5,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "90": {
+              "description": "",
+              "type": "color",
+              "value": "#def0edff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:83198e22c097129f58c9190394e3cfc614373ce5,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "95": {
+              "description": "",
+              "type": "color",
+              "value": "#eff8f6ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:c4af6ab24654cb9c842a22dd10bae76976bdda20,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "99": {
+              "description": "",
+              "type": "color",
+              "value": "#f8fcfbff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:a85a44fd08ef02e2e54d4cc8cf3aa5efabd3a5bf,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "100": {
+              "description": "",
+              "type": "color",
+              "value": "#ffffffff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:939fd09dc2f9e109fe2e8913d0efc386d0da3b57,",
+                  "exportKey": "color"
+                }
+              }
+            }
+          },
+          "soft slate": {
+            "0": {
+              "description": "",
+              "type": "color",
+              "value": "#000000ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:fc35e5861d28b9c8e5753dbcaf2f57d08292c5b9,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "10": {
+              "description": "",
+              "type": "color",
+              "value": "#1c1b18ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:07ba69fb7254e9dd60596c0df0351f8243fb21b7,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "20": {
+              "description": "",
+              "type": "color",
+              "value": "#323028ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:b9bb8949d6a4e76f38d94200711dd3f187132600,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "30": {
+              "description": "",
+              "type": "color",
+              "value": "#49463fff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:79ad9505105c252659aa06ec9354ab8447954c6a,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "40": {
+              "description": "",
+              "type": "color",
+              "value": "{color.brand — original soft slate #6b655c. muted text, metadata, hairline borders.}",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:ce40ffa7fc3811646c0133448cc68da4b426ca9e,",
+                  "exportKey": "color",
+                  "alias": "color.brand — original soft slate #6b655c. muted text, metadata, hairline borders."
+                }
+              }
+            },
+            "50": {
+              "description": "",
+              "type": "color",
+              "value": "#848077ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:470ce7224b5e7749040fa95a7d6d14f35c68de76,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "60": {
+              "description": "",
+              "type": "color",
+              "value": "#9e9a91ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:ee7f915d3e5803361847d92eb02b0b8d45e76125,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "70": {
+              "description": "",
+              "type": "color",
+              "value": "#b9b4abff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:5e5afc64fa414d88a8045932703954d81494cf91,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "80": {
+              "description": "",
+              "type": "color",
+              "value": "#d3cfc6ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:6bfe97e30483cae1b026c1f3fbff8b5211a31a22,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "87": {
+              "description": "",
+              "type": "color",
+              "value": "#e1ddd5ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:5ef1b713ecdec54b82892d2898ce407bca56b2a2,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "90": {
+              "description": "",
+              "type": "color",
+              "value": "#eae6dfff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:d83c71183ddb4044c6c625a26aefa902ad293b71,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "92": {
+              "description": "",
+              "type": "color",
+              "value": "#efece5ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:b057fdfb18ecd1a7d6fd0166f278b24c92c043ed,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "94": {
+              "description": "",
+              "type": "color",
+              "value": "#f3f1ebff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:ab575668c53ba97606cfd472f24ad6e95d094c8c,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "95": {
+              "description": "",
+              "type": "color",
+              "value": "#f6f3edff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:dc722b5b064a4ceeb9dc42b6780a3ed71c0e7810,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "96": {
+              "description": "",
+              "type": "color",
+              "value": "#f8f5f0ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:cdac2b338318a7e9304144e07348f96a5afc2edf,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "98": {
+              "description": "",
+              "type": "color",
+              "value": "#fcfaf7ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:e583e91db3e52fe1f43537ad5cbc12ad477f9bf4,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "99": {
+              "description": "",
+              "type": "color",
+              "value": "#fdfcfaff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:cb4761ec3eada87df147a884842aa79aa41b0190,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "100": {
+              "description": "",
+              "type": "color",
+              "value": "#ffffffff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:353f9aa9b357f34f03004a23dee87a07f2842a13,",
+                  "exportKey": "color"
+                }
+              }
+            }
+          },
+          "error": {
+            "0": {
+              "description": "",
+              "type": "color",
+              "value": "#000000ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:c169f78cca8389e6c0bfe54b678d1a4489bd8a5d,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "10": {
+              "description": "",
+              "type": "color",
+              "value": "#3b0e08ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:c41924573c9315796135afd34d906b27a3e3d308,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "20": {
+              "description": "",
+              "type": "color",
+              "value": "#601e13ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:f08cb27a313136f7b888faeaec4817bf9338ab3e,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "30": {
+              "description": "",
+              "type": "color",
+              "value": "#842e1fff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:bda8071758ea3f70abde621691d5bfa1c4bfb054,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "40": {
+              "description": "",
+              "type": "color",
+              "value": "#a8402cff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:046a3483897a346dd7caa810d6c96ad3cef6af7f,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "50": {
+              "description": "",
+              "type": "color",
+              "value": "#c05a44ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:9b6bb61e1b4903f39a4af53afc8810ff2c939b6e,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "60": {
+              "description": "",
+              "type": "color",
+              "value": "#d47a66ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:5d8d90f21b69bd3cc8241ec23f13bbb55147a451,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "70": {
+              "description": "",
+              "type": "color",
+              "value": "#e39a8aff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:ebd458c3d79333c599cddf360bbb2aba2a285d36,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "80": {
+              "description": "",
+              "type": "color",
+              "value": "#efbbafff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:4e9a4162a2360ce695f62b6d9e6a06f204f0b06c,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "90": {
+              "description": "",
+              "type": "color",
+              "value": "#f8dcd5ff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:30de8869653f5d9fcce33a18b1d9435c758ee163,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "95": {
+              "description": "",
+              "type": "color",
+              "value": "#fceeeaff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:f0257d017dc0cb3d64dfea6a59a4aa7dfe94a470,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "99": {
+              "description": "",
+              "type": "color",
+              "value": "#fffbfaff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:6d04cbad765f783a2b7b97f7a467615007128f79,",
+                  "exportKey": "color"
+                }
+              }
+            },
+            "100": {
+              "description": "",
+              "type": "color",
+              "value": "#ffffffff",
+              "blendMode": "normal",
+              "extensions": {
+                "org.lukasoppermann.figmaDesignTokens": {
+                  "styleId": "S:447c99c87971ccbd1fbbaaaec1d3f2186624bf12,",
+                  "exportKey": "color"
+                }
+              }
+            }
+          }
+        },
+        "semantic": {
+          "primary": {
+            "description": "Primary brand actions and interactive emphasis. Use for filled buttons, active indicators, toggles, and elements needing the strongest interactive weight. Anchored in Warm Ink. Do not use for achievement or progress moments — those use Achievement and Tertiary respectively.",
+            "type": "color",
+            "value": "#62594cff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:9fe31d8c886b53f3711ed88f7d2bf95c1a36ec2e,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on primary": {
+            "description": "Content on Primary surfaces. Use for text, icons, and labels placed directly on Primary-colored fills. Must maintain high contrast and readability.",
+            "type": "color",
+            "value": "#ffffffff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:9b6df7fff6ac164eaf67ec0b47a10c3a14aa4ff4,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "primary container": {
+            "description": "Lower-emphasis primary surfaces. Use for secondary action cards, grouped content backgrounds, and containers that support primary actions without competing visually. A warm parchment-ink blend.",
+            "type": "color",
+            "value": "#e8dbcbff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:13727d2ae5691df3cfc30db6667fd8cfbf025b8a,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on primary container": {
+            "description": "Content on Primary Container surfaces. Use for text and icons placed on Primary Container backgrounds. Dark ink for clear readability.",
+            "type": "color",
+            "value": "#1d1a15ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:68339b87419b20fb4bf768ab75cd24332d3be037,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "secondary": {
+            "description": "Supporting and secondary UI elements. Use for less prominent buttons, filter chips, toggles in secondary states, and supporting interactive elements. Anchored in Soft Slate — quiet, deferential, never competing with Primary.",
+            "type": "color",
+            "value": "#6b655cff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:27a5c5050a6049308e83af41b47c5ee704365119,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on secondary": {
+            "description": "Content on Secondary surfaces. Use for text and icons on Secondary-colored fills. Keep high contrast.",
+            "type": "color",
+            "value": "#ffffffff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:1b64932baea5ade1f6481b18f34c497d320aafb5,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "secondary container": {
+            "description": "Lower-emphasis secondary surfaces. Use for secondary cards, supporting section backgrounds, and grouped metadata containers. Warm and neutral.",
+            "type": "color",
+            "value": "#eae6dfff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:849ac6ae4711ba6a445db777933f85faccb5a08b,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on secondary container": {
+            "description": "Content on Secondary Container surfaces. Use for text and icons on Secondary Container backgrounds.",
+            "type": "color",
+            "value": "#1c1b18ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:a0f282a78e00121a81fa8527624d42a31e5f5eaf,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "tertiary": {
+            "description": "Progress and growth states — earned accent. Use for progress bars, growth indicators, streak markers, and active tracking moments. Anchored in Deep Teal per PRD. Do not use as a general-purpose accent, success color, or decorative element. Teal communicates forward motion.",
+            "type": "color",
+            "value": "#468a82ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:801747ba8cde90eb08442b2c7c7e98a863d3b9f4,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on tertiary": {
+            "description": "Content on Tertiary surfaces. Use for text and icons on progress/growth-colored fills. Reserved for progress-related contexts.",
+            "type": "color",
+            "value": "#ffffffff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:739aaf7240a6c1750839f81040f652581a581f22,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "tertiary container": {
+            "description": "Lower-emphasis progress surfaces. Use for progress-related cards, growth section backgrounds, and tracking summary containers. Subtle teal tint that stays calm.",
+            "type": "color",
+            "value": "#def0edff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:93dea648ac9fd8b5ebe0d7e1923645e469fe27f0,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on tertiary container": {
+            "description": "Content on Tertiary Container surfaces. Use for text and icons on Tertiary Container backgrounds. Deep teal-ink for contrast.",
+            "type": "color",
+            "value": "#0e2826ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:ab90b5d627748d5c4646782eb448a205c646dfed,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "error": {
+            "description": "Error and destructive states. Use for error indicators, destructive action buttons, validation failure markers, and critical alerts. A warm rust derived from the Vantea palette — organic, not clinical red. Not for warnings or low-severity feedback.",
+            "type": "color",
+            "value": "#a8402cff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:8ce3b55b999fe802ec9ccda8998d99504a1c8050,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on error": {
+            "description": "Content on Error surfaces. Use for text and icons on error-colored fills. High contrast for urgency.",
+            "type": "color",
+            "value": "#ffffffff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:756c40382efe43ff31a9b009e9b322dc527e6bf9,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "error container": {
+            "description": "Lower-emphasis error surfaces. Use for error banner backgrounds, validation message containers, and inline error callouts. Warm and restrained.",
+            "type": "color",
+            "value": "#f8dcd5ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:ecfee58f9bccd04a4cef93fdeb84c497aae13ae9,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on error container": {
+            "description": "Content on Error Container surfaces. Use for error message text and icons on Error Container backgrounds.",
+            "type": "color",
+            "value": "#3b0e08ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:5dcc16d209bf8dae4460897d6a489bc344056aaa,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "achievement": {
+            "description": "Achievement and reveal accent — the original Antique Gold. USE ONLY for earned moments: the reveal ritual, milestone celebrations, the Worth figure, shareable recap cards, and achievement badges. This is Vantea's most emotionally charged color. Never use for ordinary buttons, navigation, form elements, or routine UI. Gold is expensive because it is rare.",
+            "type": "color",
+            "value": "#b8862bff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:a2f2c8867973b9b15ae2bef8ff26bff468f3366d,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on achievement": {
+            "description": "Content on Achievement surfaces. Use for text and icons on gold achievement fills. Reserved strictly for milestone and reveal moments.",
+            "type": "color",
+            "value": "#ffffffff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:2cc4f9cb799110def06f0f96a67733d2a38fd46b,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "achievement container": {
+            "description": "Lower-emphasis achievement surface. Use for milestone card backgrounds, achievement badge containers, and reveal-supporting areas. Still earned — not for general decoration or warm-tinting arbitrary cards.",
+            "type": "color",
+            "value": "#f7ebceff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:72d59eaf2e50ae52f4194cb9934dfcbd592f8550,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on achievement container": {
+            "description": "Content on Achievement Container surfaces. Use for text and icons on achievement container backgrounds. Deep warm ink for legibility on gold-tinted surfaces.",
+            "type": "color",
+            "value": "#33240aff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:7e76483382f58421c4a4a4ceab330131894349a4,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "background": {
+            "description": "Primary canvas background. The Parchment foundation of every Vantea screen. Warm off-white — never pure white. All content sits on this surface. Use as the outermost background layer.",
+            "type": "color",
+            "value": "#faf8f5ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:4c1d25a06d0e16c4de72d7d35fee657a80da3daa,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on background": {
+            "description": "Primary content on Background. Use for body text, headings, and default content placed directly on the canvas background. Dark Warm Ink for strong readability.",
+            "type": "color",
+            "value": "#1d1a15ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:7a5141f1f00de088cf4ca93802c42ebb4a26111a,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface": {
+            "description": "Default surface for cards, sheets, and panels at base elevation. Matches Background in light theme but distinguished in dark mode where surfaces float above the background.",
+            "type": "color",
+            "value": "#faf8f5ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:abcfb1a18a0448b4760c006d83e9b7e2dcca6714,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on surface": {
+            "description": "Primary content on any Surface. Use for body text, headings, labels, and icons on Surface elements. The default text color throughout the product.",
+            "type": "color",
+            "value": "#1d1a15ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:c36872c8eaced00ccc0383849f6fe1b33f8d4263,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface variant": {
+            "description": "Alternative surface for visual differentiation. Use for section backgrounds, divider areas, sidebar fills, and content regions that need subtle distinction from the main Surface.",
+            "type": "color",
+            "value": "#eae6dfff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:eb5f80269bb4aeaa6bd6cee08433d63fa4448436,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "on surface variant": {
+            "description": "Content on Surface Variant. Use for secondary text, subtitles, and labels on variant surfaces. Slightly muted to establish hierarchy below On Surface.",
+            "type": "color",
+            "value": "#49463fff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:497b5ec7df146d4e1e965e19f48b4ec3482fa313,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface dim": {
+            "description": "Subdued, receding surface. Use for inactive areas, disabled section backgrounds, and content that should feel pushed back. Supports visual depth without strong separation.",
+            "type": "color",
+            "value": "#ddd9cfff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:a60bd15f820306c407556ccab650a54efbf04604,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface bright": {
+            "description": "Elevated bright surface. Use for surfaces needing slightly more luminance than default — modal backgrounds, popovers, and highlighted areas. Subtly brighter than Parchment.",
+            "type": "color",
+            "value": "#f9f7f2ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:4c2bc11efa1530cbe8eb1be4cf9241fb6a7abf31,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface container lowest": {
+            "description": "Lightest surface tier. Use for deeply nested containers, maximum-elevation elements, and areas requiring the most visual lift. The only true white in the system.",
+            "type": "color",
+            "value": "#ffffffff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:e29384ec3f4cf92ab8019d0350b5f5a72fa36669,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface container low": {
+            "description": "Low-emphasis container surface. Use for default cards and containers one step above the base surface. A subtle lift from Parchment.",
+            "type": "color",
+            "value": "#f6f5eeff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:51a3ba04d581ee4df3040fc807455dd36ec032ba,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface container": {
+            "description": "Standard container surface. Use for default card fills, modals, dialog backgrounds, and standard elevated containers. The workhorse surface for content grouping.",
+            "type": "color",
+            "value": "#f2f0e8ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:962074fc87aaaf10d7010e405796c8a292f6873e,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface container high": {
+            "description": "High-emphasis container surface. Use for containers needing more visual distinction — active cards, selected list items, and prominent grouped content.",
+            "type": "color",
+            "value": "#edebe2ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:b05df45e43f7801e1c85ff246b8b4fc467333769,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "surface container highest": {
+            "description": "Highest-emphasis container surface. Use for the most prominent containers — navigation bars, sticky headers, prominent toolbars, and search bars.",
+            "type": "color",
+            "value": "#e7e3d9ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:f09373aef372fca7a175722df6619b57269beb4e,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "outline": {
+            "description": "Default outlines, borders, and dividers. Use for input field borders, card outlines, and content dividers. Soft Slate-toned for quiet, structural separation without visual noise.",
+            "type": "color",
+            "value": "#848077ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:4f466688d17713dfa63e160b514c997c81fd5a54,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "outline variant": {
+            "description": "Subtle outlines and hairline borders. Use for light dividers, decorative separators, and low-emphasis boundaries. Quieter than Outline for minimal visual weight.",
+            "type": "color",
+            "value": "#d3cfc6ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:65c93abfe575b5f2df2308fb3ef5039b74677b79,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "inverse surface": {
+            "description": "Inverted dark surface for transient elements. Use for tooltips, snackbars, and temporary dark overlays. Warm Ink-derived — never cold gray or pure black. Supports the cinematic dark mode direction.",
+            "type": "color",
+            "value": "#332e26ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:ad97cf4d86952fa0b6a008eb8dc28a8a4b3dbfaf,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "inverse on surface": {
+            "description": "Content on Inverse Surface. Use for text and icons on dark tooltips and snackbar backgrounds. Warm parchment tone for comfortable reading on dark surfaces.",
+            "type": "color",
+            "value": "#f5ede0ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:d9ff6e1144856e4416bbda4128b1a71f3eb5eb83,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "inverse primary": {
+            "description": "Primary accent on inverse surfaces. Use for primary-emphasis interactive elements when displayed on dark backgrounds. A lighter Warm Ink tone that reads clearly against Inverse Surface.",
+            "type": "color",
+            "value": "#ccbfafff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:e6726d15267a11f62a6908e8bcec4f0c43564a09,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "scrim": {
+            "description": "Modal overlay scrim. Use as the darkening layer behind modals, dialogs, and bottom sheets. Always apply with reduced opacity (typically 32–50%). Warm Ink family black.",
+            "type": "color",
+            "value": "#000000ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:42738b406955cd31254648cf0ca8969abe4ec98a,",
+                "exportKey": "color"
+              }
+            }
+          },
+          "shadow": {
+            "description": "Elevation shadow base color. Use as the color for drop shadows and elevation effects. Apply with low opacity and blur. Shadows should feel soft and warm, never harsh.",
+            "type": "color",
+            "value": "#000000ff",
+            "blendMode": "normal",
+            "extensions": {
+              "org.lukasoppermann.figmaDesignTokens": {
+                "styleId": "S:3023772f9d97957d67c35afc26f7fc1d6e525843,",
+                "exportKey": "color"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

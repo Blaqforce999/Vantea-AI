@@ -1,0 +1,23 @@
+@import '../tokens/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-parchment text-warm-ink font-sans;
+  }
+
+  :focus-visible {
+    @apply ring-primary outline-none ring-2 ring-offset-2;
+  }
+}

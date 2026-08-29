@@ -1,0 +1,193 @@
+// Vantea AI — data model.
+// Source of truth: skills/db-migration-runner/SKILL.md. Read that skill (and
+// .agents/rules/architecture.md, security.md) before changing this file.
+//
+// The Session model is an addition beyond the skill doc's baseline schema:
+// security.md requires logout to "delete the session record" server-side,
+// which is not achievable with a schema that has no session table. See
+// .claude/plans/unified-crafting-charm.md, Phase 1.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String?
+  email        String?  @unique
+  avatarUrl    String?  @map("avatar_url")
+  passwordHash String?  @map("password_hash")
+  baseCurrency String   @default("NGN") @map("base_currency")
+  isGuest      Boolean  @default(true) @map("is_guest")
+
+  items        Item[]
+  snapshots    WorthSnapshot[]
+  wishlist     WishlistItem[]
+  goals        Goal[]
+  milestones   Milestone[]
+  sessions     Session[]
+  resetTokens  PasswordResetToken[]
+
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  tokenHash String   @unique @map("token_hash")
+  expiresAt DateTime @map("expires_at")
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+// Built ahead of the password-reset feature going live — see
+// lib/password-reset.ts. Only the SHA-256 hash of the raw token is stored;
+// the token itself is already high-entropy (32 random bytes), so hashing
+// with bcrypt would add cost with no benefit, unlike a user password.
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  tokenHash String    @unique @map("token_hash")
+  userId    String    @map("user_id")
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  @@index([userId])
+  @@map("password_reset_tokens")
+}
+
+model Item {
+  id           String    @id @default(cuid())
+  userId       String    @map("user_id")
+  name         String
+  category     Category
+  value        Decimal?  @db.Decimal(18, 2)
+  currency     String?
+  acquiredDate DateTime? @map("acquired_date")
+  whyNote      String?   @map("why_note")
+  imageUrl     String?   @map("image_url")
+
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  @@index([userId, category])
+  @@index([userId, acquiredDate])
+  @@map("items")
+}
+
+model WorthSnapshot {
+  id         String   @id @default(cuid())
+  userId     String   @map("user_id")
+  totalValue Decimal  @db.Decimal(18, 2) @map("total_value")
+  itemCount  Int      @map("item_count")
+  currency   String
+  capturedAt DateTime @default(now()) @map("captured_at")
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, capturedAt])
+  @@map("worth_snapshots")
+}
+
+model WishlistItem {
+  id             String         @id @default(cuid())
+  userId         String         @map("user_id")
+  name           String
+  category       Category
+  estimatedValue Decimal?       @db.Decimal(18, 2) @map("estimated_value")
+  currency       String?
+  priority       Priority       @default(SOMEDAY)
+  status         WishlistStatus @default(WANTED)
+
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt      DateTime       @default(now()) @map("created_at")
+
+  @@index([userId, status])
+  @@map("wishlist_items")
+}
+
+model Goal {
+  id              String     @id @default(cuid())
+  userId          String     @map("user_id")
+  title           String
+  targetValue     Decimal?   @db.Decimal(18, 2) @map("target_value")
+  currentProgress Decimal?   @db.Decimal(18, 2) @map("current_progress")
+  currency        String?
+  status          GoalStatus @default(ACTIVE)
+
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime   @default(now()) @map("created_at")
+  completedAt     DateTime?  @map("completed_at")
+
+  @@index([userId, status])
+  @@map("goals")
+}
+
+model Milestone {
+  id         String        @id @default(cuid())
+  userId     String        @map("user_id")
+  type       MilestoneType
+  payload    Json?
+  achievedAt DateTime      @default(now()) @map("achieved_at")
+
+  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, achievedAt])
+  @@map("milestones")
+}
+
+enum Category {
+  HOME_AND_LAND
+  CARS_AND_VEHICLES
+  TECH
+  MONEY
+  JEWELRY_AND_LUXURY
+  BUSINESS
+  COLLECTIONS
+  SKILLS
+  PLACES
+  PEOPLE
+  OTHER
+}
+
+enum Priority {
+  NOW
+  SOON
+  SOMEDAY
+}
+
+enum WishlistStatus {
+  WANTED
+  ACQUIRED
+  ARCHIVED
+}
+
+enum GoalStatus {
+  ACTIVE
+  COMPLETED
+  ARCHIVED
+}
+
+enum MilestoneType {
+  FIRST_THING
+  TEN_THINGS
+  FIRST_PROPERTY
+  CATEGORY_FILLED
+  NEW_HIGH
+  ONE_YEAR
+}
