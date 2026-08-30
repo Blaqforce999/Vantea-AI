@@ -2,6 +2,7 @@ import crypto from 'crypto';
 
 import { cookies } from 'next/headers';
 import bcrypt from 'bcryptjs';
+import { Prisma } from '@prisma/client';
 
 import { db } from '@/lib/db';
 import { logger } from '@/lib/logger';
@@ -18,6 +19,23 @@ const SESSION_TTL_MS = SESSION_TTL_DAYS * 24 * 60 * 60 * 1000;
 export type Session = { userId: string; isGuest: boolean };
 
 type Result<T> = { ok: true; data: T } | { ok: false; error: { code: string; message: string } };
+
+/**
+ * True when the failure is Prisma unable to reach or recognise the database
+ * itself — an unreachable host, a missing/blank DATABASE_URL, or a schema
+ * that was never migrated (no `users` table). Every one of these is an
+ * environment problem, not a bad request, so callers log it under a distinct
+ * event (grep `db_unavailable` in the deploy's function logs) while still
+ * returning a generic message to the client.
+ */
+function isDatabaseUnavailable(err: unknown): boolean {
+  if (err instanceof Prisma.PrismaClientInitializationError) return true;
+  if (err instanceof Prisma.PrismaClientKnownRequestError) {
+    // P1xxx: connection/auth/timeout. P2021: table missing. P2022: column missing.
+    return err.code.startsWith('P1') || err.code === 'P2021' || err.code === 'P2022';
+  }
+  return false;
+}
 
 function hashToken(token: string): string {
   return crypto.createHash('sha256').update(token).digest('hex');
@@ -84,12 +102,12 @@ export async function getOrCreateSession(): Promise<Session> {
 }
 
 export async function signup(input: SignupInput): Promise<Result<{ userId: string }>> {
-  const existing = await db.user.findUnique({ where: { email: input.email } });
-  if (existing) {
-    return { ok: false, error: { code: 'EMAIL_TAKEN', message: 'An account with that email already exists.' } };
-  }
-
   try {
+    const existing = await db.user.findUnique({ where: { email: input.email } });
+    if (existing) {
+      return { ok: false, error: { code: 'EMAIL_TAKEN', message: 'An account with that email already exists.' } };
+    }
+
     const passwordHash = await bcrypt.hash(input.password, 12);
     const user = await db.user.create({
       data: { email: input.email, name: input.name, passwordHash, isGuest: false },
@@ -98,28 +116,28 @@ export async function signup(input: SignupInput): Promise<Result<{ userId: strin
     logger.info('auth.signup', { userId: user.id });
     return { ok: true, data: { userId: user.id } };
   } catch (err) {
-    logger.error('auth.signup.failed', { error: err });
+    logger.error(isDatabaseUnavailable(err) ? 'auth.signup.db_unavailable' : 'auth.signup.failed', { error: err });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not create an account.' } };
   }
 }
 
 export async function login(input: LoginInput): Promise<Result<{ userId: string }>> {
-  const user = await db.user.findUnique({ where: { email: input.email } });
-  if (!user || !user.passwordHash) {
-    return { ok: false, error: { code: 'INVALID_CREDENTIALS', message: 'Incorrect email or password.' } };
-  }
-
-  const valid = await bcrypt.compare(input.password, user.passwordHash);
-  if (!valid) {
-    return { ok: false, error: { code: 'INVALID_CREDENTIALS', message: 'Incorrect email or password.' } };
-  }
-
   try {
+    const user = await db.user.findUnique({ where: { email: input.email } });
+    if (!user || !user.passwordHash) {
+      return { ok: false, error: { code: 'INVALID_CREDENTIALS', message: 'Incorrect email or password.' } };
+    }
+
+    const valid = await bcrypt.compare(input.password, user.passwordHash);
+    if (!valid) {
+      return { ok: false, error: { code: 'INVALID_CREDENTIALS', message: 'Incorrect email or password.' } };
+    }
+
     await issueSession(user.id);
     logger.info('auth.login', { userId: user.id });
     return { ok: true, data: { userId: user.id } };
   } catch (err) {
-    logger.error('auth.login.failed', { userId: user.id, error: err });
+    logger.error(isDatabaseUnavailable(err) ? 'auth.login.db_unavailable' : 'auth.login.failed', { error: err });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not log in.' } };
   }
 }
