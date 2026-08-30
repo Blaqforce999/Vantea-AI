@@ -128,7 +128,12 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        // Geist + system-ui sit between Fraunces and Georgia purely as
+        // per-glyph fallbacks: Fraunces has no ₦ (and no other currency
+        // marks), and without a capable fallback the browser substitutes an
+        // ill-fitting glyph that collides with the next digit on the worth
+        // figures. Fraunces still wins for every character it contains.
+        serif: ['var(--font-fraunces)', 'var(--font-geist-sans)', 'Georgia', 'system-ui', 'serif'],
         mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
       },
       fontSize,

@@ -16,11 +16,11 @@ const NAV_LINKS = [
 export function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-[color-mix(in_srgb,var(--color-outline-variant)_35%,transparent)] bg-[color-mix(in_srgb,var(--color-background)_82%,transparent)] backdrop-blur-md">
-      <div className="mx-auto flex h-[96px] max-w-[1180px] items-center justify-between px-40 max-[759px]:px-24">
+      <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between px-40 max-[759px]:h-[64px] max-[759px]:px-24">
         <a href="#" className="flex items-center" aria-label="Vantea home">
           <picture>
             <source media="(max-width: 759px)" srcSet="/vantea-logo-mobile.svg" />
-            <img src="/vantea-logo-desktop.svg" alt="Vantea AI" className="h-64 w-auto" />
+            <img src="/vantea-logo-desktop.svg" alt="Vantea AI" className="h-32 w-auto max-[759px]:h-24" />
           </picture>
         </a>
         <div className="flex items-center gap-[34px] text-body-small text-slate">
@@ -36,7 +36,7 @@ export function Nav() {
               </li>
             ))}
           </ul>
-          <StartCta className="rounded-lg bg-primary px-16 py-8 text-caption font-medium text-on-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+          <StartCta className="whitespace-nowrap rounded-lg bg-primary px-16 py-8 text-caption font-medium text-on-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
             See your worth
           </StartCta>
         </div>

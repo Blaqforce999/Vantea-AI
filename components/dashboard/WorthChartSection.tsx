@@ -31,12 +31,12 @@ export function WorthChartSection({ history, donutSegments, currency, totalLabel
     <section className="flex flex-col gap-16 rounded-xl border border-outline-variant bg-surface p-16 md:p-24">
       <div className="flex flex-wrap items-center justify-between gap-16">
         <div>
-          <p className="text-caption text-on-surface-variant">Total worth over time</p>
-          <p className="font-serif text-heading-h2 text-warm-ink">{totalLabel}</p>
+          <p className="text-body-small text-on-surface-variant">Total worth over time</p>
+          <p className="font-serif text-heading-h2 text-warm-ink md:text-worth-medium">{totalLabel}</p>
         </div>
         <div className="flex flex-wrap items-center gap-8">
           {yearChangeLabel && (
-            <span className="flex items-center gap-6 rounded-full bg-surface-container-low px-12 py-6 text-caption text-warm-ink">
+            <span className="flex items-center gap-6 whitespace-nowrap rounded-full bg-surface-container-low px-12 py-6 text-caption text-warm-ink">
               <span className="h-8 w-8 shrink-0 rounded-full bg-achievement" aria-hidden="true" />
               {yearChangeLabel}
             </span>

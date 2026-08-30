@@ -248,7 +248,7 @@ export function ConversationalAdd() {
         ) : (
           <div
             className={cn(
-              'flex items-center gap-8 rounded-full border bg-surface py-4 pl-16 pr-4 transition-colors',
+              'flex items-center gap-8 rounded-full border bg-surface py-8 pl-16 pr-4 transition-colors',
               // The ring only decorates the "focused and empty" invitation-to-type
               // moment — once there's real content (or an image is attached),
               // it reverts to a plain border even while still focused.

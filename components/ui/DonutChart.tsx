@@ -61,7 +61,7 @@ export function DonutChart({ segments, centerLabel, centerValue, size = 240, str
       </svg>
       <div className="absolute flex flex-col items-center text-center">
         <p className="text-caption uppercase tracking-wide text-on-surface-variant">{centerLabel}</p>
-        <p className="text-heading-h3 font-serif text-warm-ink">{centerValue}</p>
+        <p className="font-serif text-heading-h2 text-warm-ink">{centerValue}</p>
       </div>
     </div>
   );

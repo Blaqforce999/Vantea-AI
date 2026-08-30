@@ -98,13 +98,13 @@ export default async function DashboardPage() {
           href="/recap"
           className="flex items-center justify-between gap-16 rounded-xl bg-surface-container-low px-16 py-12 transition-colors hover:bg-surface-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
-          <div className="flex items-center gap-12">
+          <div className="flex items-center gap-16">
             <span className="flex h-40 w-40 shrink-0 items-center justify-center rounded-full bg-achievement text-on-achievement">
               <Sparkles size={20} aria-hidden="true" />
             </span>
             <div>
               <p className="text-body-small font-medium text-warm-ink">Your 2025 Wrapped</p>
-              <p className="text-caption text-on-surface-variant">See your year as a story</p>
+              <p className="text-body-small text-on-surface-variant">See your year as a story</p>
             </div>
           </div>
           <ArrowRight size={18} className="shrink-0 text-on-surface-variant" aria-hidden="true" />
@@ -147,13 +147,13 @@ function MilestoneBanner({ milestone }: { milestone: { type: MilestoneType; payl
       : MILESTONE_LABELS[milestone.type];
 
   return (
-    <div className="flex items-center gap-12 rounded-xl bg-achievement-container px-16 py-12 text-on-achievement-container">
+    <div className="flex items-center gap-16 rounded-xl bg-achievement-container px-16 py-12 text-on-achievement-container">
       <span className="flex h-40 w-40 shrink-0 items-center justify-center rounded-full bg-achievement text-on-achievement">
         <Award size={20} aria-hidden="true" />
       </span>
       <div>
         <p className="text-body-small font-medium">{title}</p>
-        <p className="text-caption">{MILESTONE_DESCRIPTIONS[milestone.type]}</p>
+        <p className="text-body-small">{MILESTONE_DESCRIPTIONS[milestone.type]}</p>
       </div>
     </div>
   );

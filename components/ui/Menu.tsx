@@ -81,12 +81,12 @@ type MenuItemProps = {
 
 export function MenuItem({ icon: Icon, label, href, onClick, danger }: MenuItemProps) {
   const className = cn(
-    'flex w-full items-center gap-12 rounded-lg px-12 py-10 text-left text-body-small transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+    'flex w-full items-center gap-12 rounded-lg px-12 py-12 text-left text-body-small transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
     danger ? 'text-error hover:bg-error-container' : 'text-warm-ink hover:bg-surface-container',
   );
   const content = (
     <>
-      {Icon && <Icon size={18} aria-hidden="true" />}
+      {Icon && <Icon size={20} aria-hidden="true" />}
       {label}
     </>
   );

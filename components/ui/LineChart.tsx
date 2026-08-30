@@ -33,7 +33,7 @@ function formatAxisValue(value: number, currency: string): string {
 export function LineChart({ points, currency, width = 640, height = 220, className }: LineChartProps) {
   if (points.length < 2) {
     return (
-      <div className="flex h-[220px] items-center justify-center text-body-small text-on-surface-variant">
+      <div className="flex h-[168px] items-center justify-center text-center text-body-small text-on-surface-variant md:h-[208px]">
         Not enough history yet. This fills in as your worth is recorded over time.
       </div>
     );
@@ -55,28 +55,29 @@ export function LineChart({ points, currency, width = 640, height = 220, classNa
 
   return (
     <div className={cn('flex flex-col gap-8', className)}>
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" preserveAspectRatio="none">
+      {/* preserveAspectRatio="none" keeps the plot flush to the card's full
+          width; a fixed CSS height stops it ballooning on wide desktop
+          viewports, and vectorEffect keeps the line/dot weight honest
+          despite the horizontal stretch. */}
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        preserveAspectRatio="none"
+        className="h-[168px] w-full md:h-[208px]"
+      >
         {GRID_ROWS.map((g) => {
           const y = padding + g * (height - padding * 2);
           const value = maxValue * (1 - g);
           return (
             <g key={g}>
-              <line
-                x1={plotLeft}
-                x2={width - padding}
-                y1={y}
-                y2={y}
-                stroke="var(--color-outline-variant)"
-                strokeDasharray="4 4"
-              />
+              <line x1={plotLeft} x2={width - padding} y1={y} y2={y} stroke="var(--color-outline-variant)" />
               <text x={plotLeft - 8} y={y} textAnchor="end" dominantBaseline="middle" className="fill-[var(--color-on-surface-variant)] text-[10px]">
                 {formatAxisValue(value, currency)}
               </text>
             </g>
           );
         })}
-        <path d={pathD} fill="none" stroke="var(--color-achievement)" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx={xFor(points.length - 1)} cy={yFor(last.value)} r={5} fill="var(--color-achievement)" stroke="var(--color-surface)" strokeWidth={2} />
+        <path d={pathD} fill="none" stroke="var(--color-achievement)" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+        <circle cx={xFor(points.length - 1)} cy={yFor(last.value)} r={5} fill="var(--color-achievement)" stroke="var(--color-surface)" strokeWidth={2} vectorEffect="non-scaling-stroke" />
       </svg>
       <div className="flex justify-between pl-[48px] text-caption text-on-surface-variant">
         {axisLabels.map((p, i) => (

@@ -20,7 +20,7 @@ export function WorthFigure({ currency, total, size = 'large', className }: Wort
     <p
       className={cn(
         'font-serif text-gold',
-        size === 'large' ? 'text-worth-large' : 'text-worth-medium',
+        size === 'large' ? 'text-worth-medium sm:text-worth-large' : 'text-worth-medium',
         className,
       )}
     >

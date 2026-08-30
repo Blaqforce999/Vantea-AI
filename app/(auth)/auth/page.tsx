@@ -47,7 +47,7 @@ export default async function AuthPage({ searchParams }: AuthPageProps) {
     <AuthCard>
       <div className="mb-32 text-center">
         <h1 className="font-serif text-display-medium text-on-surface">{copy.heading}</h1>
-        <p className="mt-8 text-body-regular text-on-surface-variant">{copy.subtitle}</p>
+        <p className="mt-8 text-body-small text-on-surface-variant">{copy.subtitle}</p>
       </div>
 
       <AuthForm mode={mode} next={next} />

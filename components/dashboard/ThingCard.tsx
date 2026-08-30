@@ -45,7 +45,7 @@ export function ThingCard({ item }: { item: ItemCardData }) {
           ) : (
             <CategoryArt category={item.category} className="h-full w-full rounded-lg md:rounded-none md:rounded-t-xl" />
           )}
-          <span className="absolute left-8 top-8 hidden h-28 w-28 items-center justify-center rounded-md bg-surface-container-lowest shadow-[0_1px_2px_var(--color-shadow)] md:flex">
+          <span className="absolute left-6 top-6 flex h-24 w-24 items-center justify-center rounded-md bg-surface-container-lowest shadow-[0_1px_2px_var(--color-shadow)] md:left-8 md:top-8 md:h-28 md:w-28">
             <Icon size={14} className={colors.text} aria-hidden="true" />
           </span>
         </div>

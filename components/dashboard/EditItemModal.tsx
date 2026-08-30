@@ -3,12 +3,13 @@
 import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
-import { X } from 'lucide-react';
+import { Trash2, X } from 'lucide-react';
 
-import { editItem } from '@/app/(app)/(with-nav)/collection/actions';
+import { deleteItem, editItem } from '@/app/(app)/(with-nav)/collection/actions';
 import { ItemFormFields, type ItemFormValues } from '@/components/ai/ItemFormFields';
 import type { ItemCardData } from '@/components/item/ItemCard';
 import { Button } from '@/components/ui/Button';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { useToast } from '@/components/ui/Toast';
 import { DEFAULT_CURRENCY } from '@/lib/constants';
 
@@ -37,8 +38,36 @@ export function EditItemModal({ item, open, onClose }: EditItemModalProps) {
   const [fields, setFields] = useState<ItemFormValues>(() => toFormValues(item));
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [confirmingDelete, setConfirmingDelete] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   if (!open) return null;
+
+  async function handleDelete() {
+    setDeleting(true);
+    setError(null);
+
+    try {
+      const result = await deleteItem({ id: item.id });
+
+      if (!result.ok) {
+        setDeleting(false);
+        setConfirmingDelete(false);
+        setError(result.error.message);
+        showToast({ title: 'Could not delete', description: result.error.message, variant: 'error' });
+        return;
+      }
+
+      showToast({ title: `${item.name} removed from your things`, variant: 'success' });
+      router.refresh();
+      onClose();
+    } catch {
+      setDeleting(false);
+      setConfirmingDelete(false);
+      setError("Couldn't reach the server. Check your connection and try again.");
+      showToast({ title: 'Could not delete. Check your connection', variant: 'error' });
+    }
+  }
 
   async function handleSubmit() {
     if (!fields.name.trim()) {
@@ -82,6 +111,7 @@ export function EditItemModal({ item, open, onClose }: EditItemModalProps) {
   }
 
   return (
+    <>
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-scrim-50 p-16" onClick={onClose}>
       <div
         role="dialog"
@@ -102,20 +132,48 @@ export function EditItemModal({ item, open, onClose }: EditItemModalProps) {
         </div>
 
         <div className="mt-16">
-          <ItemFormFields values={fields} onChange={setFields} disabled={saving} idPrefix={`edit-${item.id}`} />
+          <ItemFormFields values={fields} onChange={setFields} disabled={saving || deleting} idPrefix={`edit-${item.id}`} />
         </div>
 
         {error && <p className="mt-8 text-caption text-error">{error}</p>}
 
-        <div className="mt-24 flex justify-end gap-8">
-          <Button type="button" variant="ghost" onClick={onClose} disabled={saving}>
-            Cancel
-          </Button>
-          <Button type="button" onClick={handleSubmit} disabled={saving || !fields.name.trim()}>
-            {saving ? 'Saving…' : 'Save changes'}
-          </Button>
+        <div className="mt-24 flex flex-col-reverse gap-12 sm:flex-row sm:items-center sm:justify-between">
+          <button
+            type="button"
+            onClick={() => setConfirmingDelete(true)}
+            disabled={saving || deleting}
+            className="inline-flex items-center justify-center gap-6 self-start rounded-lg px-8 py-8 text-body-small font-medium text-error transition-colors hover:bg-error-container disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
+            <Trash2 size={16} aria-hidden="true" />
+            {deleting ? 'Deleting…' : 'Delete item'}
+          </button>
+          <div className="flex justify-end gap-8">
+            <Button type="button" variant="ghost" onClick={onClose} disabled={saving || deleting} className="flex-1 sm:flex-none">
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              onClick={handleSubmit}
+              disabled={saving || deleting || !fields.name.trim()}
+              className="flex-1 sm:flex-none"
+            >
+              {saving ? 'Saving…' : 'Save changes'}
+            </Button>
+          </div>
         </div>
       </div>
     </div>
+
+    <ConfirmDialog
+      open={confirmingDelete}
+      title={`Delete ${item.name}?`}
+      description="This permanently removes it from your things and adjusts your total worth. This can't be undone."
+      confirmLabel="Delete item"
+      destructive
+      pending={deleting}
+      onConfirm={handleDelete}
+      onCancel={() => setConfirmingDelete(false)}
+    />
+    </>
   );
 }

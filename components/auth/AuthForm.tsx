@@ -155,7 +155,7 @@ export function AuthForm({ mode, next }: AuthFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-16">
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-20">
       {bannerError && (
         <div role="alert" className="rounded-xl bg-error-container px-16 py-12 text-body-small text-on-error-container">
           {bannerError}
@@ -251,9 +251,10 @@ export function AuthForm({ mode, next }: AuthFormProps) {
       <Button
         type="submit"
         variant="primary"
+        size="lg"
         disabled={pending}
         aria-busy={pending}
-        className="w-full rounded-xl bg-warm-ink text-parchment hover:opacity-90"
+        className="mt-8 w-full rounded-xl bg-warm-ink text-parchment hover:opacity-90"
       >
         {pending ? SUBMIT_COPY[mode].busy : SUBMIT_COPY[mode].idle}
       </Button>

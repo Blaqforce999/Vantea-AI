@@ -46,7 +46,7 @@ export function ThingsGrid({ items }: { items: ItemCardData[] }) {
           </div>
         )}
       </div>
-      <div className="flex flex-col gap-8 md:grid md:grid-cols-3 md:gap-16">
+      <div className="flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-20">
         {visible.map((item) => (
           <ThingCard key={item.id} item={item} />
         ))}
