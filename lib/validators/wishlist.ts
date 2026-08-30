@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { categorySchema } from '@/lib/validators/item';
+import { categorySchema, MAX_MONEY } from '@/lib/validators/item';
 
 export const prioritySchema = z.enum(['NOW', 'SOON', 'SOMEDAY']);
 export const wishlistStatusSchema = z.enum(['WANTED', 'ACQUIRED', 'ARCHIVED']);
@@ -8,7 +8,7 @@ export const wishlistStatusSchema = z.enum(['WANTED', 'ACQUIRED', 'ARCHIVED']);
 export const addWishlistItemSchema = z.object({
   name: z.string().min(1).max(200),
   category: categorySchema,
-  estimatedValue: z.number().nonnegative().finite().optional(),
+  estimatedValue: z.number().nonnegative().finite().max(MAX_MONEY).optional(),
   currency: z.string().length(3).toUpperCase().optional(),
   priority: prioritySchema.default('SOMEDAY'),
 });

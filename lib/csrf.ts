@@ -10,14 +10,20 @@
  * Cookie-based sessions already get primary CSRF protection from
  * `sameSite: 'lax'` (browsers won't attach the session cookie to a
  * cross-site POST); this is defense-in-depth on top of that.
+ *
+ * Falls back to the Referer header when Origin is absent (some browsers
+ * and privacy configurations omit Origin on same-site POSTs) — the host
+ * comparison stays exactly as strict either way.
  */
 export function isTrustedOrigin(req: Request): boolean {
-  const origin = req.headers.get('origin');
   const host = req.headers.get('x-forwarded-host') ?? req.headers.get('host');
-  if (!origin || !host) return false;
+  if (!host) return false;
+
+  const source = req.headers.get('origin') ?? req.headers.get('referer');
+  if (!source) return false;
 
   try {
-    return new URL(origin).host === host;
+    return new URL(source).host === host;
   } catch {
     return false;
   }

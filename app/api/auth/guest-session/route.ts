@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: { code: 'FORBIDDEN', message: 'Invalid request origin.' } }, { status: 403 });
   }
 
-  const rateLimit = guestSessionRateLimiter.check(getClientKey(req));
+  const rateLimit = await guestSessionRateLimiter.check(getClientKey(req));
   if (!rateLimit.success) {
     return NextResponse.json(
       { ok: false, error: { code: 'RATE_LIMITED', message: 'Too many requests. Try again shortly.' } },

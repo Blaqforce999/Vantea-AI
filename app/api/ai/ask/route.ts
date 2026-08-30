@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 import { askVantea } from '@/lib/ai';
 import { getSession } from '@/lib/auth';
+import { isTrustedOrigin } from '@/lib/csrf';
 import { logger } from '@/lib/logger';
 import { aiRateLimiter, getClientKey } from '@/lib/rate-limit';
 
@@ -10,13 +11,17 @@ const inputSchema = z.object({ question: z.string().min(1).max(500) });
 
 // Read-only: answers using only the requesting user's own data. Never writes.
 export async function POST(req: NextRequest) {
+  if (!isTrustedOrigin(req)) {
+    return NextResponse.json({ ok: false, error: { code: 'FORBIDDEN', message: 'Invalid request origin.' } }, { status: 403 });
+  }
+
   try {
     const session = await getSession();
     if (!session) {
       return NextResponse.json({ ok: false, error: { code: 'UNAUTHENTICATED', message: 'No session.' } }, { status: 401 });
     }
 
-    const rateLimit = aiRateLimiter.check(`${getClientKey(req)}:${session.userId}`);
+    const rateLimit = await aiRateLimiter.check(`${getClientKey(req)}:${session.userId}`);
     if (!rateLimit.success) {
       return NextResponse.json(
         { ok: false, error: { code: 'RATE_LIMITED', message: 'Too many requests. Try again shortly.' } },

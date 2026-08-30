@@ -1,11 +1,13 @@
 import { z } from 'zod';
 
+import { MAX_MONEY } from '@/lib/validators/item';
+
 export const goalStatusSchema = z.enum(['ACTIVE', 'COMPLETED', 'ARCHIVED']);
 
 export const addGoalSchema = z.object({
   title: z.string().min(1).max(200),
-  targetValue: z.number().nonnegative().finite().optional(),
-  currentProgress: z.number().nonnegative().finite().optional(),
+  targetValue: z.number().nonnegative().finite().max(MAX_MONEY).optional(),
+  currentProgress: z.number().nonnegative().finite().max(MAX_MONEY).optional(),
   currency: z.string().length(3).toUpperCase().optional(),
 });
 
