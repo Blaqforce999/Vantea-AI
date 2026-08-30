@@ -5,6 +5,9 @@ import { CATEGORY_LABELS } from '@/lib/constants';
 import { getCategoryBreakdown, getFeaturedWorth } from '@/lib/worth';
 import type { Category } from '@prisma/client';
 
+// Live but intentionally unlinked from nav — not a page to index.
+export const metadata = { robots: { index: false, follow: false } };
+
 export default async function WorthPage() {
   const session = await getSession();
   if (!session) return null;

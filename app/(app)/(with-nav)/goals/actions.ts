@@ -33,7 +33,7 @@ export async function addGoal(raw: unknown): Promise<ActionResult<{ id: string }
     logger.info('goal.created', { userId: session.userId, goalId: goal.id });
     return { ok: true, data: { id: goal.id } };
   } catch (err) {
-    logger.error('goal.create.failed', { userId: session.userId, error: err });
+    logger.error('goal.create.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not add this goal.' } };
   }
 }
@@ -72,7 +72,7 @@ export async function editGoal(raw: unknown): Promise<ActionResult<{ id: string 
     logger.info('goal.updated', { userId: session.userId, goalId: goal.id });
     return { ok: true, data: { id: goal.id } };
   } catch (err) {
-    logger.error('goal.update.failed', { userId: session.userId, error: err });
+    logger.error('goal.update.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not update this goal.' } };
   }
 }
@@ -87,7 +87,9 @@ export async function deleteGoal(raw: unknown): Promise<ActionResult<{ id: strin
   }
 
   const existing = await db.goal.findUnique({ where: { id: parsed.data.id } });
-  if (!existing || existing.userId !== session.userId) {
+  // Already gone — a retried delete is a no-op success, not an error.
+  if (!existing) return { ok: true, data: { id: parsed.data.id } };
+  if (existing.userId !== session.userId) {
     return { ok: false, error: { code: 'NOT_FOUND', message: 'Could not find that goal.' } };
   }
 
@@ -97,7 +99,7 @@ export async function deleteGoal(raw: unknown): Promise<ActionResult<{ id: strin
     logger.info('goal.deleted', { userId: session.userId, goalId: parsed.data.id });
     return { ok: true, data: { id: parsed.data.id } };
   } catch (err) {
-    logger.error('goal.delete.failed', { userId: session.userId, error: err });
+    logger.error('goal.delete.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not delete this goal.' } };
   }
 }

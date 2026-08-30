@@ -51,7 +51,7 @@ export async function exportMyData(): Promise<ActionResult<Record<string, unknow
     logger.info('privacy.export', { userId: session.userId });
     return { ok: true, data: exportData };
   } catch (err) {
-    logger.error('privacy.export.failed', { userId: session.userId, error: err });
+    logger.error('privacy.export.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not export your data.' } };
   }
 }
@@ -74,7 +74,7 @@ export async function deleteMyAccount(): Promise<ActionResult<null>> {
     logger.info('privacy.account_deleted', { userId: session.userId });
     return { ok: true, data: null };
   } catch (err) {
-    logger.error('privacy.account_delete.failed', { userId: session.userId, error: err });
+    logger.error('privacy.account_delete.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not delete your account. Nothing was changed.' } };
   }
 }

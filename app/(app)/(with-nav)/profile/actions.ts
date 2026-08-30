@@ -34,7 +34,7 @@ export async function updateProfile(raw: unknown): Promise<ActionResult<null>> {
     logger.info('profile.updated', { userId: session.userId });
     return { ok: true, data: null };
   } catch (err) {
-    logger.error('profile.update.failed', { userId: session.userId, error: err });
+    logger.error('profile.update.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not update your profile.' } };
   }
 }
@@ -79,7 +79,7 @@ export async function changeEmail(raw: unknown): Promise<ActionResult<null>> {
     logger.info('profile.email_changed', { userId: session.userId });
     return { ok: true, data: null };
   } catch (err) {
-    logger.error('profile.email_change.failed', { userId: session.userId, error: err });
+    logger.error('profile.email_change.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not update your email.' } };
   }
 }

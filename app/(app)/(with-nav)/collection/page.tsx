@@ -11,6 +11,9 @@ import { CATEGORY_LABELS, CATEGORY_OPTIONS } from '@/lib/constants';
 import { db } from '@/lib/db';
 import type { Category } from '@prisma/client';
 
+// Live but intentionally unlinked from nav — not a page to index.
+export const metadata = { robots: { index: false, follow: false } };
+
 export default async function CollectionPage() {
   const session = await getSession();
   if (!session) return null; // (app)/layout.tsx handles guest bootstrapping before this ever renders

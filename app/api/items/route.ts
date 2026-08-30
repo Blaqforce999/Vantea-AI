@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ ok: true, data: { items: serialized } }, { status: 200 });
   } catch (err) {
-    logger.error('items.list.failed', { error: err });
+    logger.error('items.list.failed', { error: err instanceof Error ? err.message : 'unknown' });
     return NextResponse.json({ ok: false, error: { code: 'SERVER_ERROR', message: 'Something went wrong.' } }, { status: 500 });
   }
 }

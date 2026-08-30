@@ -34,10 +34,12 @@ export async function parseItemFromText(text: string): Promise<ParseResult> {
 export async function askVantea(userId: string, question: string): Promise<string> {
   const [user, items, wishlist, goals, milestones] = await Promise.all([
     db.user.findUniqueOrThrow({ where: { id: userId }, select: { baseCurrency: true, createdAt: true } }),
-    db.item.findMany({ where: { userId }, orderBy: { createdAt: 'asc' } }),
-    db.wishlistItem.findMany({ where: { userId } }),
-    db.goal.findMany({ where: { userId } }),
-    db.milestone.findMany({ where: { userId } }),
+    // Defensive ceiling — a personal collection never approaches this, but it
+    // keeps one huge account from turning every "ask" into an unbounded read.
+    db.item.findMany({ where: { userId }, orderBy: { createdAt: 'asc' }, take: 2000 }),
+    db.wishlistItem.findMany({ where: { userId }, take: 500 }),
+    db.goal.findMany({ where: { userId }, take: 500 }),
+    db.milestone.findMany({ where: { userId }, take: 500 }),
   ]);
 
   const context: AskContext = {

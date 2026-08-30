@@ -7,6 +7,9 @@ import { db } from '@/lib/db';
 import { getFeaturedWorth } from '@/lib/worth';
 import { Hourglass } from 'lucide-react';
 
+// Live but intentionally unlinked from nav — not a page to index.
+export const metadata = { robots: { index: false, follow: false } };
+
 export default async function TimelinePage() {
   const session = await getSession();
   if (!session) return null;

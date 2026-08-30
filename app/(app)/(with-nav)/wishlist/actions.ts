@@ -34,7 +34,7 @@ export async function addWishlistItem(raw: unknown): Promise<ActionResult<{ id: 
     logger.info('wishlist.created', { userId: session.userId, wishlistItemId: item.id });
     return { ok: true, data: { id: item.id } };
   } catch (err) {
-    logger.error('wishlist.create.failed', { userId: session.userId, error: err });
+    logger.error('wishlist.create.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not add this.' } };
   }
 }
@@ -71,7 +71,7 @@ export async function editWishlistItem(raw: unknown): Promise<ActionResult<{ id:
     logger.info('wishlist.updated', { userId: session.userId, wishlistItemId: item.id });
     return { ok: true, data: { id: item.id } };
   } catch (err) {
-    logger.error('wishlist.update.failed', { userId: session.userId, error: err });
+    logger.error('wishlist.update.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not update this.' } };
   }
 }
@@ -86,7 +86,9 @@ export async function deleteWishlistItem(raw: unknown): Promise<ActionResult<{ i
   }
 
   const existing = await db.wishlistItem.findUnique({ where: { id: parsed.data.id } });
-  if (!existing || existing.userId !== session.userId) {
+  // Already gone — a retried delete is a no-op success, not an error.
+  if (!existing) return { ok: true, data: { id: parsed.data.id } };
+  if (existing.userId !== session.userId) {
     return { ok: false, error: { code: 'NOT_FOUND', message: 'Could not find that item.' } };
   }
 
@@ -96,7 +98,7 @@ export async function deleteWishlistItem(raw: unknown): Promise<ActionResult<{ i
     logger.info('wishlist.deleted', { userId: session.userId, wishlistItemId: parsed.data.id });
     return { ok: true, data: { id: parsed.data.id } };
   } catch (err) {
-    logger.error('wishlist.delete.failed', { userId: session.userId, error: err });
+    logger.error('wishlist.delete.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not delete this.' } };
   }
 }

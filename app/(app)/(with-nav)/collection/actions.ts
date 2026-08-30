@@ -47,7 +47,7 @@ export async function addItem(
     logger.info('item.created', { userId: session.userId, itemId: item.id });
     return { ok: true, data: { id: item.id, newMilestones } };
   } catch (err) {
-    logger.error('item.create.failed', { userId: session.userId, error: err });
+    logger.error('item.create.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not add this.' } };
   }
 }
@@ -92,7 +92,7 @@ export async function editItem(raw: unknown): Promise<ActionResult<{ id: string 
     logger.info('item.updated', { userId: session.userId, itemId: item.id });
     return { ok: true, data: { id: item.id } };
   } catch (err) {
-    logger.error('item.update.failed', { userId: session.userId, error: err });
+    logger.error('item.update.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not update this.' } };
   }
 }
@@ -107,7 +107,9 @@ export async function deleteItem(raw: unknown): Promise<ActionResult<{ id: strin
   }
 
   const existing = await db.item.findUnique({ where: { id: parsed.data.id } });
-  if (!existing || existing.userId !== session.userId) {
+  // Already gone — a retried delete is a no-op success, not an error.
+  if (!existing) return { ok: true, data: { id: parsed.data.id } };
+  if (existing.userId !== session.userId) {
     return { ok: false, error: { code: 'NOT_FOUND', message: 'Could not find that item.' } };
   }
 
@@ -123,7 +125,7 @@ export async function deleteItem(raw: unknown): Promise<ActionResult<{ id: strin
     logger.info('item.deleted', { userId: session.userId, itemId: parsed.data.id });
     return { ok: true, data: { id: parsed.data.id } };
   } catch (err) {
-    logger.error('item.delete.failed', { userId: session.userId, error: err });
+    logger.error('item.delete.failed', { userId: session.userId, error: err instanceof Error ? err.message : 'unknown' });
     return { ok: false, error: { code: 'SERVER_ERROR', message: 'Could not delete this.' } };
   }
 }

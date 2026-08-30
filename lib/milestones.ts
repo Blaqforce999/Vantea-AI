@@ -20,8 +20,12 @@ const ONCE_ONLY_TYPES: MilestoneType[] = [
 
 /**
  * Evaluates every milestone deterministically and awards any newly-earned
- * ones inside a single transaction, so a re-run (or a concurrent call) never
- * double-awards a once-only milestone. Call this after the item write (and
+ * ones inside a single transaction. A sequential re-run for the same state
+ * awards nothing new (the once-only guard and the NEW_HIGH prior-max check
+ * below both re-derive from existing rows). Two genuinely concurrent calls
+ * could still race a once-only award, since there is no DB-level uniqueness
+ * on (userId, type) — see the schema note; the practical impact is a
+ * duplicate badge, not corrupted state. Call this after the item write (and
  * its WorthSnapshot) has already committed.
  */
 export type AwardedMilestone = { type: MilestoneType; payload?: Prisma.InputJsonValue };

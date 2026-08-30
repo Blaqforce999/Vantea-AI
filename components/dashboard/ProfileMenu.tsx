@@ -29,7 +29,18 @@ export function ProfileMenu({ profile }: { profile: ProfileMenuData }) {
 
   return (
     <>
-      <Menu trigger={<Avatar name={profile.name} src={profile.avatarUrl} size="sm" />}>
+      <Menu
+        trigger={
+          // Match the "Ask Vantea" button's box exactly: a 40px circle on
+          // mobile, 36px (its desktop pill height) at >=640px.
+          <Avatar
+            name={profile.name}
+            src={profile.avatarUrl}
+            size="sm"
+            className="h-40 w-40 sm:h-36 sm:w-36"
+          />
+        }
+      >
         <MenuItem icon={User} label="Your Profile" href="/profile" />
         <MenuItem icon={ShieldCheck} label="Privacy" href="/privacy" />
         <MenuItem icon={Download} label={exporting ? 'Exporting…' : 'Export Data'} onClick={handleExport} />

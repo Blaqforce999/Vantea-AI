@@ -6,6 +6,9 @@ import { PageHeader } from '@/components/shared/PageHeader';
 import { getSession } from '@/lib/auth';
 import { db } from '@/lib/db';
 
+// Live but intentionally unlinked from nav — not a page to index.
+export const metadata = { robots: { index: false, follow: false } };
+
 export default async function MilestonesPage() {
   const session = await getSession();
   if (!session) return null;

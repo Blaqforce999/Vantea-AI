@@ -11,6 +11,9 @@ import { db } from '@/lib/db';
 
 const PRIORITY_LABELS = { NOW: 'Now', SOON: 'Soon', SOMEDAY: 'Someday' };
 
+// Live but intentionally unlinked from nav — not a page to index.
+export const metadata = { robots: { index: false, follow: false } };
+
 export default async function WishlistPage() {
   const session = await getSession();
   if (!session) return null;
