@@ -57,7 +57,7 @@ export function Footer() {
         <div className="mt-64 flex items-center gap-16 border-t border-[color-mix(in_srgb,var(--color-outline-variant)_35%,transparent)] pb-40 pt-24">
           <picture>
             <source media="(max-width: 759px)" srcSet="/vantea-logo-mobile.svg" />
-            <img src="/vantea-logo-desktop.svg" alt="Vantea AI" className="h-64 w-auto flex-none" />
+            <img src="/vantea-logo-desktop.svg" alt="Vantea AI" className="h-32 w-auto flex-none max-[759px]:h-24" />
           </picture>
           <p className="font-mono text-caption leading-[1.7] text-slate">
             &copy; 2026 Vantea AI. Private by default.
@@ -73,9 +73,9 @@ export function Footer() {
           light-gold pair used only here. */}
       <div
         aria-hidden="true"
-        className="select-none bg-gradient-gold-foil bg-clip-text pt-[22px] text-center font-serif text-[clamp(6.875rem,23vw,21.25rem)] font-medium leading-[0.9] tracking-[-0.1em] text-transparent"
+        className="select-none bg-gradient-gold-foil bg-clip-text pt-[22px] text-center font-serif text-[clamp(4rem,15vw,13.5rem)] font-medium leading-[0.9] tracking-[-0.1em] text-transparent opacity-40"
       >
-        Vantea
+        Vantea AI
       </div>
     </footer>
   );

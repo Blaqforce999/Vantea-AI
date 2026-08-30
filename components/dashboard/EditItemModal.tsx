@@ -116,28 +116,37 @@ export function EditItemModal({ item, open, onClose }: EditItemModalProps) {
       <div
         role="dialog"
         aria-modal="true"
-        className="max-h-[85vh] w-full max-w-md overflow-y-auto rounded-xl border border-outline-variant bg-surface-bright p-24 shadow-[0_1px_2px_var(--color-shadow)]"
+        aria-labelledby={`edit-${item.id}-title`}
+        className="relative max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-outline-variant bg-surface-bright p-24 shadow-[0_20px_60px_-15px_var(--color-shadow)] sm:p-32"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-center justify-between">
-          <h2 className="text-heading-h4 text-warm-ink">Edit {item.name}</h2>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded-md p-4 text-on-surface-variant hover:bg-surface-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-          >
-            <X size={18} aria-hidden="true" />
-          </button>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-16 top-16 rounded-md p-4 text-on-surface-variant hover:bg-surface-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <X size={18} aria-hidden="true" />
+        </button>
+
+        <h2 id={`edit-${item.id}-title`} className="text-center text-heading-h4 text-warm-ink">
+          Edit item
+        </h2>
+        <div className="mt-16 border-t border-outline-variant" />
+
+        <div className="mt-24">
+          <ItemFormFields
+            values={fields}
+            onChange={setFields}
+            disabled={saving || deleting}
+            idPrefix={`edit-${item.id}`}
+            variant="compact"
+          />
         </div>
 
-        <div className="mt-16">
-          <ItemFormFields values={fields} onChange={setFields} disabled={saving || deleting} idPrefix={`edit-${item.id}`} />
-        </div>
+        {error && <p className="mt-12 text-caption text-error">{error}</p>}
 
-        {error && <p className="mt-8 text-caption text-error">{error}</p>}
-
-        <div className="mt-24 flex flex-col-reverse gap-12 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-24 flex flex-col-reverse gap-12 border-t border-outline-variant pt-20 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="button"
             onClick={() => setConfirmingDelete(true)}
